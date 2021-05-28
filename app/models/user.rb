@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :name, presence: true
+  validates :license, lingth: {maximum: 500}
 
   enum profession: { worker: 0, company: 1 }
   
