@@ -3,5 +3,18 @@
   li{
     padding: 0 10px 0 10px;
   }
-
+  .profile-default-img {
+    height: 128px;
+      width: 128px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-image: url("~profile_default_img_128.png");
+      background-size: contain;
+  }
+  .profile-img {
+    height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+  }
 }
