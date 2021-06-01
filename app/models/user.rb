@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲストユーザー"
+    end
+  end
+
   validates :name, presence: true
   validates :license, length: {maximum: 500}
 
@@ -22,13 +29,6 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
-  def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-      user.name = "ゲストユーザー"
-    end
-  end
+  
   
 end
