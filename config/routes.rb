@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'spots/index'
   root 'top#index' 
   
   devise_for :users, 
