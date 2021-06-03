@@ -36,4 +36,12 @@
     </div>
   <% end %>
 
+  <% if current_user.profession == "company" %>
+    <p>投稿現場一覧</p>
+    <div class="spotslist">
+      <ol class="spots">
+        <%= render @spots %>
+      </ol>
+    </div>
+  <% end %>
 </div>

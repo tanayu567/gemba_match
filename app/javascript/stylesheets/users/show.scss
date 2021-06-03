@@ -61,3 +61,14 @@
     margin: 8px auto;
   }
 }
+
+p {
+  text-align: center;
+}
+
+.spotslist {
+  justify-content: center;
+  .spots {
+    list-style-type: none;
+  }
+}
