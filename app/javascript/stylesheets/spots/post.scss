@@ -1,0 +1,37 @@
+.post-page {
+  max-width: 360px;
+  margin: 8px auto 0;
+}
+
+.post__submit-btn {
+  background-color: #FD3378;
+  height: 38px;
+}
+
+
+  .start {
+    float: left;
+    width: 150px;
+  }
+  .last {
+    float: right;
+    width: 150px;
+  }
+  .center {
+    margin: 0 auto;
+    padding-top: 0.375rem;
+    width: 20px;
+  }
+  
+
+@media (max-width: 480px) {
+  .post-page {
+    max-width: initial;
+  }
+  .card {
+    border: none;
+    &-header {
+      background-color: #fff;
+    }
+  }
+}

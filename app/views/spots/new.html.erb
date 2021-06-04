@@ -1,0 +1,39 @@
+<div class="post-page">
+  <div class="card">
+    <div class="card-header">
+      工事現場を投稿する
+    </div>
+
+    <div class="card-body">
+      <%= form_with(model: @spot, local: true) do |f| %>
+      
+        <%= f.label :現場名 %>
+        <%= f.text_field :s_name, class: "form-control", placeholder: "(例)〇〇ホテル新築工事" %>
+
+        <%= f.label :現場住所 %>
+        <%= f.text_field :address, class: "form-control", placeholder: "(例)〇〇県×x市〜" %>
+        
+        
+          <div>
+            <%= f.label :工期 %>
+          </div>
+          <div class="start">
+            <%= f.text_field :start, class: "form-control", placeholder: "(例)2020/10/1" %>
+          </div>
+          <div class="last">
+            <%= f.text_field :last, class: "form-control", placeholder: "(例)2020/11/30" %>
+          </div>
+          <div class="center">〜</div>
+        
+
+        <%= f.label :金額 %>
+        <%= f.text_field :money, class: "form-control", placeholder: "(例)1,500,000" %>
+
+        <div class="sign-in__submit-btn">
+          <%= f.submit "投稿", class: "btn btn-block text-white" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
