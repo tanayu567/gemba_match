@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
     
   resources :users, only: [:show]
-  resources :spots, only: [:create, :destroy, :edit, :new]
+  resources :spots, only: [:show, :create, :destroy, :edit, :new]
   
 end
