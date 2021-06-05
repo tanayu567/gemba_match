@@ -1,5 +1,9 @@
 class SpotsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :edit]
+
+  def show
+    @spot = Spot.find(params[:id])
+  end
   
   def create
     @spot = current_user.spots.build(spot_params)
