@@ -29,14 +29,17 @@
       <div class="col px-4">
         <div class="p-3 border bg-light">
           <p class="listtitle">新着現場一覧</p>
-          <div class="newspots">
+          <div class="new-spots">
             <%= render @spots %>
           </div>
         </div>  
       </div>
       <div class="col px-4">
         <div class="p-3 border bg-light">
-          <p class="listtitle">新規職人一覧</p>       
+          <p class="listtitle">新規職人一覧</p>   
+          <div class="new-woker">
+            <%= render @users %>
+          </div>    
         </div>
       </div>
     </div>
