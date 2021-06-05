@@ -15,10 +15,13 @@ end
     root_path 
   end
 
+  def logged_in?
+    !current_user.nil?
+  end
+
   def logged_in_user
     unless logged_in?
-      store_location
       flash[:danger] = "Please log in."
-      redirect_to login_url
+      redirect_to new_user_session_url
     end
   end
