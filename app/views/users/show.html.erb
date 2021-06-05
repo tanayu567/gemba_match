@@ -27,6 +27,16 @@
         <% end %>
         <span>ログアウト</span>
       </div>
+
+      <% if @user.profession == "company" %>
+        <div class="user-action-common"> 
+          <%= link_to new_spot_path do %>
+            <i class="fas fa-city fa-2x"></i>
+          <% end %>
+          <span>現場を投稿<span>
+        </div>
+      <% end  %>
+
       <div class="user-action-common">
         <%= link_to edit_user_registration_path do %>
           <i class="fas fa-pencil-alt fa-2x"></i>
