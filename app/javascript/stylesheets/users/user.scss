@@ -1,0 +1,26 @@
+.worker-details {
+  list-style-type: none;
+  border-style: groove;
+  .profile-list {
+    &-default-img {
+      height: 64px;
+      width: 64px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-image: url("~profile_default_img_128.png");
+      background-size: contain;
+    }
+    &-img {
+      height: 64px;
+      width: 64px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    &-name {
+      margin-left: 10px;
+      ul {
+        list-style-type: none;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :spots, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  default_scope -> { order(created_at: :desc) }
   
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
