@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_035555) do
+ActiveRecord::Schema.define(version: 2021_06_07_064550) do
+
+  create_table "likes", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "to_user_id", null: false
+    t.bigint "from_user_id", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_user_id"], name: "index_likes_on_from_user_id"
+    t.index ["to_user_id"], name: "index_likes_on_to_user_id"
+  end
 
   create_table "spots", charset: "utf8mb4", force: :cascade do |t|
     t.string "s_name"
@@ -43,5 +53,7 @@ ActiveRecord::Schema.define(version: 2021_06_02_035555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "users", column: "from_user_id"
+  add_foreign_key "likes", "users", column: "to_user_id"
   add_foreign_key "spots", "users"
 end

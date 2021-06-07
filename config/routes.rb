@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
-  
+  resources :likes, only: [:create]
 end
