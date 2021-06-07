@@ -21,11 +21,11 @@
         </div>
 
         <div class="btn-group btn-group-toggle d-flex mb-3" data-toggle="buttons">
-          <label class="btn btn-light flex-fill mr-2 active">
+          <label class="btn btn-light flex-fill mr-2 active" id="worker">
             <%= f.radio_button :profession, :worker, class: "form-check-input" %>
-            <label class="form-check-label">職人</label>
+            <label class="form-check-label ">職人</label>
           </label>
-          <label class="btn btn-light flex-fill">
+          <label class="btn btn-light flex-fill" id="company">
             <%= f.radio_button :profession, :company, class: "form-check-input" %>
             <label class="form-check-label">事業所</label>
           </label>
@@ -43,3 +43,4 @@
 
   </div>
 </div>
+<%= javascript_pack_tag 'sign_up' %>
