@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'top#index'
   get 'spots/index'
   
+  
   devise_for :users,
     controllers: { registrations: 'registrations' } 
   
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
     
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
-  resources :likes, only: [:create]
+  resources :spots do
+    resources :likes, only: %i[create destroy]
+  end
 end

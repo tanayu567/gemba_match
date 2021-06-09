@@ -1,6 +1,7 @@
 class Like < ApplicationRecord
-  belongs_to :to_user, class_name: "User"
-  belongs_to :from_user, class_name: "User"
+  belongs_to :user
+  belongs_to :spot
+  validates_uniqueness_of :spot_id, scope: :user_id
 end
 
-enum status: { dislike: 0, like: 1 }
+

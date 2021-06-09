@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :spots, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   default_scope -> { order(created_at: :desc) }
@@ -33,5 +33,8 @@ class User < ApplicationRecord
     result
   end
   
+  def already_liked?(spot)
+    self.likes.exists?(spot_id: spot.id)
+  end
   
 end

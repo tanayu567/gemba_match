@@ -20,6 +20,7 @@
     <div class="detail-name mt-4">
       建設会社：　 <%= link_to @spot.user.name, user_path(id: @spot.user.id) %>
     </div>
-
   </div>
+
+    <%= render 'likes/like', spot: @spot %>
 </div>
