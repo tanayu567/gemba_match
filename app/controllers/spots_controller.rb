@@ -3,6 +3,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @comment = Comment.new
+    @comments = @spot.comments.includes(:user)
   end
   
   def create

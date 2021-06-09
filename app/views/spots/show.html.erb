@@ -23,4 +23,21 @@
   </div>
 
     <%= render 'likes/like', spot: @spot %>
+<% if logged_in? %>
+    <%= form_with model: [@spot,@comment], local: true do |f| %>
+      <%= f.text_area :text, rows: "2"%>
+      <%= f.submit "コメントする" %>
+    <% end %>
+<% end %>
+
+<h4>＜コメント一覧＞</h4>
+<% @comments.each do |comment| %>
+  <p>
+    <strong><%= comment.user.name %>：</strong>
+    <%= comment.text %>
+    <% if user_logged_in? && current_user.id == comment.user_id %>
+      <%= link_to "削除", spot_comments_path(comment.spot.id, comment.id), method: :delete %>
+    <% end %>
+  </p>
+<% end %>
 </div>
