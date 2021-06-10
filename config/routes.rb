@@ -9,13 +9,24 @@ Rails.application.routes.draw do
   devise_scope :user do
     get  'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
+
+  resources :spots do
+    collection do
+      get 'search'
+    end
+  end
     
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
+
   resources :spots do
     resources :likes, only: %i[create destroy]
   end
+
   resources :spots do
     resources :comments, only: [:create, :destroy]
   end
+
+  
+  
 end

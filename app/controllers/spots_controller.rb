@@ -27,10 +27,17 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
+  def search
+    @spots = Spot.search(params[:keyword])
+  end
+  
+
 private
 
 def spot_params
   params.require(:spot).permit(:s_name, :address, :start, :last, :money)
 end
+
+
 
 end

@@ -1,8 +1,10 @@
 <div class="index">
   <div class="center jumbotron"> 
     <div class="serchall">
-      <input class="serch" type="search" name="search" placeholder="現場名、地名等入力して下さい">
-      <button type="button">検索</button>
+      <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
+        <%= form.text_field :keyword, placeholder: "投稿を検索する" %>
+        <%= form.submit "検索" %>
+      <% end %>
     </div>
 
       

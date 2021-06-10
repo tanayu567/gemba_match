@@ -1,0 +1,15 @@
+.search {
+  max-width: 414px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  
+  &-box {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 360px;
+    padding: 10px 0;
+    border-style: groove;
+  }
+}
