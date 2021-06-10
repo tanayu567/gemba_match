@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_back(fallback_location: root_path)
-    # else
-    #   @spot = @comment.spot
-    #   @comments = @spot.comments.includes(:user)
-    #   redirect_back(fallback_location: root_path)
+    else
+      @spot = @comment.spot
+      @comments = @spot.comments.includes(:user)
+      redirect_back(fallback_location: root_path)
     end
   end
 

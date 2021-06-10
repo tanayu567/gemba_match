@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_06_09_065506) do
 
   create_table "comments", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "spot_id"
+    t.bigint "user_id", null: false
+    t.bigint "spot_id", null: false
     t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
