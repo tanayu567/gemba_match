@@ -6,6 +6,6 @@ class TopController < ApplicationController
     @users = User.all
   end
 
-  
+ 
 
 end

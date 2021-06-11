@@ -1,11 +1,11 @@
-<div class="search">
+<div class="search-spot">
   <% @spots.each do |spot| %> 
     <ul class="spot-details">
-  <li><%= link_to "現場名：　#{spot.s_name}", spot %></li>
-  <li>現場住所：　<%= spot.address %></li>
-  <li>工期：　<span><%= spot.start %></span> ~ <span><%= spot.last %></span></li>
-  <li>発注金額：　¥ <%= spot.money %></li>
-</ul>
+      <li>現場名：　<%= link_to "#{spot.s_name}", spot %></li>
+      <li>現場住所：　<%= spot.address %></li>
+      <li>工期：　<span><%= spot.start %></span> ~ <span><%= spot.last %></span></li>
+      <li>発注金額：　¥ <%= spot.money %></li>
+    </ul>
 
   <% end %>
 </div>

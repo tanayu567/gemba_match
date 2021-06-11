@@ -15,6 +15,14 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  resources :users do
+    collection do
+      get 'search'
+    end
+  end
+
+
     
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]

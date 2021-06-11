@@ -38,4 +38,14 @@ class User < ApplicationRecord
     self.likes.exists?(spot_id: spot.id)
   end
   
+  def self.search(search)
+    if search != ""
+      User.where("name LIKE(?) or experience LIKE(?) or home LIKE(?) or license LIKE(?)", 
+                  "%#{search}%","%#{search}%","%#{search}%","%#{search}%",)
+      # Spot.where('address LIKE(?)', "%#{search}%")
+    else  
+      User.all
+      # User.includes(:user)
+    end
+  end
 end

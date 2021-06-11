@@ -1,29 +1,23 @@
 <div class="index">
   <div class="center jumbotron"> 
-    <div class="serchall">
-      <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
-        <%= form.text_field :keyword, placeholder: "投稿を検索する" %>
-        <%= form.submit "検索" %>
+    <div class="serchall">  
+      <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "worker") %>
+        <div class="searchall-form">
+          <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
+            <%= form.text_field :keyword, placeholder: "現場を検索する" %>
+            <%= form.submit "検索" %>
+          <% end %>
+        </div>
+      <% end %>
+      <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "company") %>
+      <div class="searchall-form">
+        <%= form_with url: search_users_path, local: true, method: :get do |form| %>
+          <%= form.text_field :keyword, placeholder: "職人を検索する" %>
+          <%= form.submit "検索" %>
+        <% end %>
+      </div>
       <% end %>
     </div>
-
-      
-    <div>
-      <p>職人向け条件検索</p>
-      <button type="button">施工エリア</button>
-      <button type="button">工期</button>
-      <button type="button">金額</button>
-    </div>
-
-    <div>
-      <p>事業所向け条件検索</p>
-      <button type="button">活動エリア</button>
-      <button type="button">資格</button>
-      <button type="button">経験年数</button>
-    </div>
-
-    
-
   </div>
 
   <div class="container px-3">
