@@ -13,6 +13,12 @@
       <%= @user.name %>
     </div>
 
+    <%= render 'follow_form' if logged_in? %>
+
+    <section class="stats">
+      <%= render 'stats' %>
+    </section>
+
     <div class="profile-name mt-4">
       <%= @user.license %>
     </div>
