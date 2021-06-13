@@ -10,11 +10,7 @@ Rails.application.routes.draw do
     get  'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
+  
 
   resources :spots do
     collection do
@@ -25,6 +21,12 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'search'
+    end
+  end
+
+  resources :users do
+    member do
+      get :following, :followers
     end
   end
 

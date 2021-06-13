@@ -33,8 +33,12 @@
       <div class="col px-4">
         <div class="p-3 border bg-light">
           <p class="listtitle">新規職人一覧</p>   
-          <div class="new-woker">
-            <%= render @users %>   
+          <div class="new-woker">       
+            <% @users.each do |user| %>
+            <% if user.profession == "worker" && user.id != 6 %>
+              <%= render user %>
+            <% end %>
+            <% end %>
           </div>    
         </div>
       </div>

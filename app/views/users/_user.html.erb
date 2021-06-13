@@ -1,17 +1,15 @@
-<% if user.profession == "worker" && user.id != 6%>
-  <ul class="worker-details"> 
-    <div class="profile-list d-flex flex-row align-items-center">
-      <% if user.profile_image.url.nil? %>
-        <div class="profile-list-default-img"></div>
-      <% else %>
-        <div><%= image_tag user.profile_image.url, class: "profile-list-img" %></div>
-      <% end %>
-      <div class="profile-list-name">
-        <ul>
-          <li><%= link_to "#{user.name}", user %></li>
-          <li>経験年数 <%= user.experience %>年</li>
-        </ul>
-      </div>
+<ul class="worker-details"> 
+  <div class="profile-list d-flex flex-row align-items-center">
+    <% if user.profile_image.url.nil? %>
+      <div class="profile-list-default-img"></div>
+    <% else %>
+      <div><%= image_tag user.profile_image.url, class: "profile-list-img" %></div>
+    <% end %>
+    <div class="profile-list-name">
+      <ul>
+        <li><%= link_to "#{user.name}", user %></li>
+        <li>経験年数 <%= user.experience %>年</li>
+      </ul>
     </div>
-  </ul>
-<% end %>
+  </div>
+</ul>

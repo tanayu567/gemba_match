@@ -1,20 +1,19 @@
-
-  <ul class="seach-worker"> 
-    <% @users.each do |user| %> 
-      <% if user.id != 6 && user.profession == "worker" %>
-      <div class="profile-search d-flex flex-row align-items-center">
-        <% if user.profile_image.url.nil? %>
-          <div class="profile-search-default-img"></div>
-        <% else %>
-          <div><%= image_tag user.profile_image.url, class: "profile-search-img" %></div>
-        <% end %>
-        <div class="profile-list-name">
-          <ul>
-            <li><%= link_to "#{user.name}", user %></li>
-            <li>経験年数 <%= user.experience %>年</li>
-          </ul>
-        </div>
-      </div>
+<ul class="seach-worker"> 
+  <% @users.each do |user| %> 
+    <% if user.id != 6 && user.profession == "worker" %>
+    <div class="profile-search d-flex flex-row align-items-center">
+      <% if user.profile_image.url.nil? %>
+        <div class="profile-search-default-img"></div>
+      <% else %>
+        <div><%= image_tag user.profile_image.url, class: "profile-search-img" %></div>
       <% end %>
+      <div class="profile-list-name">
+        <ul>
+          <li><%= link_to "#{user.name}", user %></li>
+          <li>経験年数 <%= user.experience %>年</li>
+        </ul>
+      </div>
+    </div>
     <% end %>
+  <% end %>
 </ul>
