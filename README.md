@@ -1,24 +1,18 @@
-# README
+■サービス名
+「現場マッチ」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+■サービス概要
+「建設現場における現場と職人のマッチングアプリ」
 
-Things you may want to cover:
+工事現場とそこで作業する職人さんをマッチさせるためのサービス
+事業所は自身が工事する現場の概要を投稿し、職人さんは自信の能力を投稿する。
+気に入った現場及び職人さんがあればコメントやDMでマッチしていくというシステムです。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+■開発背景
+私自身が建設業で仕事をした経験があり、建設業では人手不足が深刻化しており
+私もそれを問題視する一人でした。
+しかし工事現場では人手が足りていないものの、職人さんがみんな仕事を抱えているか
+というとそうでもない事も多々ありました。
+現場の管理者と実際に仕事を探している職人さんが繋がっていないのが現状でした。
+そこでツールを通して現場と職人さんをマッチさせることが出来れば人手不足を
+和らげることができると考えこのサービスの開発に手を掛けました。
