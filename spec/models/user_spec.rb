@@ -15,13 +15,13 @@ RSpec.describe User, type: :model do
         expect(user).to be_invalid
       end
 
-      it 'メールアドレスが無効の場合に登録失敗' do
+      it 'メールアドレスが重複している場合に登録失敗' do
         FactoryBot.create(:user, email: 'test@gmail.com' )
         user.email = 'test@gmail.com'
         expect(user).to be_invalid
       end
-
-      it 'メールアドレスが重複している場合に登録失敗' do
+      
+      it 'メールアドレスが無効の場合に登録失敗' do
         user.email = 'absdefghijklmn'
         expect(user).to be_invalid
       end
@@ -43,10 +43,10 @@ RSpec.describe User, type: :model do
         expect(user).to be_invalid
       end
 
-      it '資格欄が500文字以上だと失敗' do
+      it '資格欄が500文字より多いと失敗' do
         user.license = 'a' * 501
         expect(user).to be_invalid
       end
     end
-  end  
+  end 
 end
