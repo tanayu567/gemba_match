@@ -10,7 +10,6 @@ class Spot < ApplicationRecord
     if search != ""
       Spot.where("s_name LIKE(?) or address LIKE(?) or start LIKE(?) or last LIKE(?) or money LIKE(?)", 
                   "%#{search}%","%#{search}%","%#{search}%","%#{search}%","%#{search}%")
-      # Spot.where('address LIKE(?)', "%#{search}%")
     else  
       Spot.includes(:user)
     end
