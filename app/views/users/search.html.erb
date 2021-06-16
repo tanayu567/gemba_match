@@ -1,4 +1,7 @@
-<div class="seach-worker"> 
+ <div class="card seach-worker">
+    <div class="card-header">
+      検索結果一覧
+    </div>
   <% @users.each do |user| %> 
     <% if user.id != 6 && user.profession == "worker" %>
       <%= render user %>
