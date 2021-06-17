@@ -1,16 +1,50 @@
 <header class="navbar navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
-    <%= link_to "現場マッチ", root_path, id: "logo" %>
+    <%= link_to "現場マッチ", root_path, class: "header-chara" %>
     <nav>
       <ul class="nav navbar-nav navbar-right list-group list-group-horizontal">
-        <% if logged_in? %>
-            <li><%= link_to "Users", "#" %></li>  
-            <li><%= link_to "プロフィール", user_path(id: current_user) %></li>
+        <% if logged_in? %> 
+            <li><%= link_to "プロフィール", user_path(id: current_user), class: "header-chara" %></li>
         <% else %>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-          <li><%= link_to "ログイン", user_session_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: "header-chara" %></li>
+          <li><%= link_to "ログイン", user_session_path, class: "header-chara" %></li>
         <% end %>
       </ul>
     </nav>
   </div>
 </header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "現場マッチ", root_path, class: "header-chara navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "プロフィール", user_path(id: current_user), class: "header-chara nav-link active" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "header-chara nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", user_session_path, class: "header-chara nav-link active" %>
+        </li>
+        <% end %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
