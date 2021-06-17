@@ -26,11 +26,22 @@ RSpec.describe Spot, type: :model do
       it "現場名がない場合に投稿失敗" do
         spot.s_name = nil
         expect(spot).to be_invalid
-      end
-      
+      end     
+    end    
+  end
+
+  describe "association" do
+    it 'Userとの関係' do
+      expect(Spot.reflect_on_association(:user).macro).to eq :belongs_to
     end
 
+    it 'likesとの関係' do
+      expect(Spot.reflect_on_association(:likes).macro).to eq :has_many
+    end
 
+    it 'commentsとの関係' do
+      expect(Spot.reflect_on_association(:comments).macro).to eq :has_many
+    end
     
   end
   

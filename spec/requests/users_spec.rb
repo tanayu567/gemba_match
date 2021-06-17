@@ -63,5 +63,22 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(200)
     end 
   end
+
+  # describe '#show' do
+  #   it '正常にアクセスできること' do
+  #     get user_path(user)
+  #     expect(response).to have_http_status(200)
+  #   end
+  # end
+
+  # describe "search" do
+  #   it "正常に一覧を表示する" do
+  #     post user_session_path, params: { user: user_params }
+  #     get search_users_path
+  #     expect(response).to have_http_status(200)
+  #     expect(response.body).to include '検索結果一覧'
+  #   end   
+  # end
+  
   
 end

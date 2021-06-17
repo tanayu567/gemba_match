@@ -49,4 +49,35 @@ RSpec.describe User, type: :model do
       end
     end
   end 
+
+  describe "association" do
+    it 'spotsとの関係' do
+      expect(User.reflect_on_association(:spots).macro).to eq :has_many
+    end
+
+    it 'likesとの関係' do
+      expect(User.reflect_on_association(:likes).macro).to eq :has_many
+    end
+
+    it 'commentsとの関係' do
+      expect(User.reflect_on_association(:comments).macro).to eq :has_many
+    end
+
+    it 'active_relationshipsとの関係' do
+      expect(User.reflect_on_association(:active_relationships).macro).to eq :has_many
+    end
+
+    it 'passive_relationshipsとの関係' do
+      expect(User.reflect_on_association(:passive_relationships).macro).to eq :has_many
+    end
+
+    it 'followingとの関係' do
+      expect(User.reflect_on_association(:following).macro).to eq :has_many
+    end
+
+    it 'followersとの関係' do
+      expect(User.reflect_on_association(:followers).macro).to eq :has_many
+    end
+  end
+  
 end
