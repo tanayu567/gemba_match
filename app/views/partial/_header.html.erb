@@ -1,37 +1,21 @@
-<header class="navbar navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
-    <%= link_to "現場マッチ", root_path, class: "header-chara" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right list-group list-group-horizontal">
-        <% if logged_in? %> 
-            <li><%= link_to "プロフィール", user_path(id: current_user), class: "header-chara" %></li>
-        <% else %>
-          <li><%= link_to "新規登録", new_user_registration_path, class: "header-chara" %></li>
-          <li><%= link_to "ログイン", user_session_path, class: "header-chara" %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <%= link_to "現場マッチ", root_path, class: "header-chara navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav ">
         <% if logged_in? %>
         <li class="nav-item">
-          <%= link_to "プロフィール", user_path(id: current_user), class: "header-chara nav-link active" %>
+          <%= link_to "プロフィール", user_path(id: current_user), class: "header-chara nav-link " %>
         </li>
         <% else %>
         <li class="nav-item">
-          <%= link_to "新規登録", new_user_registration_path, class: "header-chara nav-link active" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "header-chara nav-link " %>
         </li>
         <li class="nav-item">
-          <%= link_to "ログイン", user_session_path, class: "header-chara nav-link active" %>
+          <%= link_to "ログイン", user_session_path, class: "header-chara nav-link " %>
         </li>
         <% end %>
         <li class="nav-item dropdown">
