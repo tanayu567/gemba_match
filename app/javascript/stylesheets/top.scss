@@ -7,6 +7,12 @@ body {
   background-image: url("握手の画像２.jpeg");
   background-size: cover;
   background-position: 50% 30%;
+  .catch-copy {
+    font-family: "游明朝", "游明朝体", serif;
+    font-weight: 600;
+    font-size: 50px;
+    text-shadow: 0 0 15px white;
+  }
   .searchall-form {
     margin: 20px 0;
     .search-form {

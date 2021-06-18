@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <%= link_to "現場マッチ", root_path, class: "header-chara navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
           <li class="nav-item">
             <%= link_to "新規登録", new_user_registration_path, class: "header-chara nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item">           
             <%= link_to "ログイン", user_session_path, class: "header-chara nav-link" %>
           </li>
         <% end %>
