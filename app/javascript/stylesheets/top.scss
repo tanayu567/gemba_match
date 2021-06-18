@@ -4,8 +4,25 @@ body {
 
 .jumbotron {
   text-align: center;
+  background-image: url("握手の画像２.jpeg");
+  background-size: cover;
+  background-position: 50% 30%;
   .searchall-form {
     margin: 20px 0;
+    .search-form {
+      margin: 0 2px;
+      height: 30px;
+      border: none;
+      box-shadow: 0 0 8px gray;
+    }
+    .search-btn {
+      padding: 2px 12px;
+      height: 30px;
+      background-color: #3988fd;
+      border-radius: 10px;
+      margin: 0 2px;
+      box-shadow: 0 0 8px gray;
+    }
   }
   .serch {
     width: 500px;
@@ -14,6 +31,8 @@ body {
     margin: 20px 0 5px 0;
   }
 }
+
+
 
 .listtitle {
   text-align: center;

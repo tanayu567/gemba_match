@@ -1,19 +1,19 @@
 <div class="index">
   <div class="center jumbotron"> 
-    <div class="serchall">  
+    <div class="searchall">  
       <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "worker") %>
         <div class="searchall-form">
           <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
-            <%= form.text_field :keyword, placeholder: "現場を検索する" %>
-            <%= form.submit "検索" %>
+            <%= form.text_field :keyword, placeholder: "現場を検索する",class: "search-form" %>
+            <%= form.submit "検索", class: "search-btn btn text-white" %>
           <% end %>
         </div>
       <% end %>
       <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "company") %>
       <div class="searchall-form">
         <%= form_with url: search_users_path, local: true, method: :get do |form| %>
-          <%= form.text_field :keyword, placeholder: "職人を検索する" %>
-          <%= form.submit "検索" %>
+          <%= form.text_field :keyword, placeholder: "職人を検索する",class: "search-form" %>
+          <%= form.submit "検索", class: "search-btn btn text-white" %>
         <% end %>
       </div>
       <% end %>
