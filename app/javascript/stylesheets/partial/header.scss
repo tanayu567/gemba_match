@@ -1,4 +1,12 @@
-.navbar{
+.navbar-expand-lg {
+  background-color: aliceblue;
+  
+}
+.container-fluid {
+  font-family: "ヒラギノ丸ゴ ProN";
+}
+
+.navbar {
   padding:10px 0 10px 0;
   height: 80px; 
 }
@@ -7,5 +15,12 @@
   padding: 0 10px 0 10px;
   font-weight: 900;
   font-size: 24px;
-  font-family: sans-serif;
+}
+
+.nav-link {
+  color: #0d6efd;
+}
+
+.nav-link:hover {
+  color: #0a58ca;
 }
