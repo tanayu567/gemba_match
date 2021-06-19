@@ -1,15 +1,15 @@
-<% if logged_in? %>
-    <% if current_user.already_liked?(spot) %> 
-      <%= button_to spot_like_path(spot), method: :delete, remote: true do %> 
-        <i class="fas fa-heart" style="color: red;"></i>
-      <% end %> 
-      <span style="color: red;"><%= spot.likes.count %></span>
-    <% else %> 
-      <%= button_to spot_likes_path(spot), method: :post, remote: true do %> 
-        <i class="far fa-heart"></i>
-      <% end %> 
-      <%= spot.likes.count %> 
-    <% end %> 
-
-    
-<% end %> 
+<div class="like">
+  <% if logged_in? %>
+      <% if current_user.already_liked?(spot) %> 
+        <%= button_to spot_like_path(spot), method: :delete, remote: true, class: "heart" do %> 
+          <i class="fas fa-heart" style="color: #FD3378;"></i>
+        <% end %> 
+        <span style="color: #FD3378;"><%= "#{spot.likes.count} いいね" %></span>
+      <% else %> 
+        <%= button_to spot_likes_path(spot), method: :post, remote: true, class: "heart" do %> 
+          <i class="far fa-heart" style="color: gray;"></i>
+        <% end %> 
+        <span style="color: gray;"><%= "#{spot.likes.count} いいね" %></span>
+      <% end %>    
+  <% end %>   
+</div>

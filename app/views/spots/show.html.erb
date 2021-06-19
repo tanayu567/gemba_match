@@ -1,28 +1,31 @@
-<div class="user-show-page">
+<div class="spot-show-page">
   <div class="detail mt-4">
 
-    <div class="ditail-name mt-4">
-      現場名：　<%= @spot.s_name %>
+    <div class="ditail-name">
+     <%= @spot.s_name %>
     </div>
 
-    <div class="detail-name mt-4">
-      現場住所：　<%= @spot.address %>
-    </div>
+    <div class="spot-information">
+      <div class="detail-address mt-4">
+        現場住所：　<%= @spot.address %>
+      </div>
 
-    <div class="detail-name mt-4">
-      工期：　<span><%= @spot.start %></span> ~ <span><%= @spot.last %></span></li>
-    </div>
+      <div class="detail-span mt-4">
+        　工期　：　<span><%= @spot.start %></span> ~ <span><%= @spot.last %></span></li>
+      </div>
 
-    <div class="detail-name mt-4">
-      発注金額：　¥ <%= @spot.money %>
-    </div>
+      <div class="detail-money mt-4">
+        発注金額：　¥ <%= @spot.money %>
+      </div>
 
-    <div class="detail-name mt-4">
-      建設会社：　 <%= link_to @spot.user.name, user_path(id: @spot.user.id) %>
+      <div class="detail-company mt-4">
+        建設会社：　 <%= link_to @spot.user.name, user_path(id: @spot.user.id), class: "detail-company" %>
+      </div>
     </div>
   </div>
 
     <%= render 'likes/like', spot: @spot %>
+    
 <% if logged_in? %>
     <%= form_with model: [@spot,@comment], local: true do |f| %>
       <%= f.text_area :text, rows: "2"%>

@@ -1,0 +1,51 @@
+.spot-show-page {
+  max-width: 414px;
+  margin: 0 auto;
+  box-shadow: 0 0 8px gray;
+}
+
+.ditail-name{
+  margin: 40px 0 15px 0;
+  text-align: center;
+  font-size: 24px;
+  
+}
+
+.spot-information {
+  margin: 0 15px 15px 15px;
+  padding-left: 15px;
+  padding-bottom: 24px;
+  border-style: groove;
+  border-width: 2px;
+}
+
+.detail-company {
+  text-decoration: none;
+}
+.like {
+  height: 30px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  float: left;  
+  background-color: white;
+  margin-right: 5px;
+  border: 0px none;
+  border-radius: 100vh;
+}
+
+.iine {
+  display: inline-block;
+}
+
+@media (min-width: 414px) {
+  .spot-show-page {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin: 8px auto;
+  }
+}
+
