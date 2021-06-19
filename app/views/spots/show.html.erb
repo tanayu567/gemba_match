@@ -25,22 +25,24 @@
   </div>
 
     <%= render 'likes/like', spot: @spot %>
-    
-<% if logged_in? %>
-    <%= form_with model: [@spot,@comment], local: true do |f| %>
-      <%= f.text_area :text, rows: "2"%>
-      <%= f.submit "コメントする" %>
-    <% end %>
-<% end %>
 
-<h4>＜コメント一覧＞</h4>
-<% @comments.each do |comment| %>
-  <p>
-    <strong><%= comment.user.name %>：</strong>
-    <%= comment.text %>
-    <% if logged_in? && current_user.id == comment.user_id %>
-      <%= button_to "削除", spot_comment_path(comment.spot.id, comment.id), method: :delete %>
+  <% if logged_in? %> 
+      <%= form_with model: [@spot,@comment], local: true , class: "comment-form" do |f| %>
+        <%= f.text_area :text, rows: "2", class: "form-control"%>  
+        <%= f.submit "コメントする", class: "form-button" %> 
+      <% end %>
+  <% end %>
+
+  <div class="comment-index">
+    <span class="box-title">コメント</span>
+    <% @comments.each do |comment| %>
+      <p class="comment-contents">
+        <strong><%= link_to "#{comment.user.name}", user_path(id: comment.user.id), class: "comment-user" %>：</strong>
+        <%= comment.text %>
+        <% if logged_in? && current_user.id == comment.user_id %>
+          <%= button_to "コメント削除", spot_comment_path(comment.spot.id, comment.id), class: "comment-delete", method: :delete %>
+        <% end %>
+      </p>
     <% end %>
-  </p>
-<% end %>
+  </div>
 </div>
