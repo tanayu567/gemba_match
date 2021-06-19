@@ -7,7 +7,7 @@
     <% end %>
     <div class="profile-list-name">
       <ul>
-        <li><%= link_to "#{user.name}", user %></li>
+        <li><%= link_to "#{user.name}", user, class: "worker-name" %></li>
         <li>経験年数 <%= user.experience %>年</li>
       </ul>
     </div>

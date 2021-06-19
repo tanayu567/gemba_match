@@ -1,6 +1,13 @@
 .worker-details {
   list-style-type: none;
   border-style: groove;
+  border-width: 2px;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .worker-name {
+    text-decoration: none;
+  }
   .profile-list {
     &-default-img {
       height: 64px;
