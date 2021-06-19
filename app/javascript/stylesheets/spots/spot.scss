@@ -1,7 +1,24 @@
 .spot-details {
   list-style-type: none;
   border-style: groove;
+  border-width: 2px;
   margin: 0 10px 10px 10px;
   padding-left: 15px;
-  
+  background-color: white;
+  .spot-name {
+    text-decoration: none;
+  }
+  .fas {
+    height: 16px;
+    width: 20px;
+  }
+  .fa-map {
+    margin-right: 2px;
+  }
+  .fa-calendar {
+    margin-right: 6px;
+  }
+  .fa-dollar-sign {
+    margin-right: 11px;
+  }
 }

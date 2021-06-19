@@ -1,7 +1,7 @@
 <ul class="spot-details">
-  <li>現場名：　<%= link_to "#{spot.s_name}", spot %></li>
-  <li>現場住所：　<%= spot.address %></li>
-  <li>工期：　<span><%= spot.start %></span> ~ <span><%= spot.last %></span></li>
-  <li>発注金額：　¥ <%= spot.money %></li>
+  <li><i class="fas fa-city"></i>　<%= link_to "#{spot.s_name}", spot, class: "spot-name" %></li>
+  <li><i class="fas fa-solid fa-map"></i>　<%= spot.address %></li>
+  <li><i class="fas fa-solid fa-calendar"></i>　<span><%= spot.start %></span> ~ <span><%= spot.last %></span></li>
+  <li><i class="fas fa-solid fa-dollar-sign"></i></i>　¥ <%= spot.money %></li>
 </ul>
 
