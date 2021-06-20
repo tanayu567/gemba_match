@@ -19,11 +19,20 @@
       <%= render 'stats' %>
     </section>
 
-    <div class="profile-name mt-4">
-      <%= @user.license %>
-    </div>
-
   </div>
+
+    <div class="details-index">
+      <span class="details-title">プロフィール</span>
+        <div class="details-contents">
+          経験年数： <%= @user.experience %> 年
+        </div>
+        <div class="details-contents">
+          活動エリア： <%= @user.home %> 
+        </div>
+        <div class="details-contents">
+          資格etc：<%= @user.license %>
+        </div>
+    </div>
 
   <% if current_user.id == @user.id %>
     <div class="user-action">
