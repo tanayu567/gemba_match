@@ -1,9 +1,13 @@
 .seach-worker {
   max-width: 414px;
   margin: 0 auto;
-  padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  box-shadow: 0 0 4px gray;
+  .user-search-top {
+    text-align: center;
+    font-size: 20px;
+  }
 }
 // .profile-search {
 //   margin-top: 10px;

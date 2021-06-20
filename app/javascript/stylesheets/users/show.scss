@@ -1,7 +1,6 @@
 .user-show-page {
   max-width: 414px;
   margin: 0 auto;
-  
   .profile {
     display: flex;
     flex-direction: column;
@@ -25,11 +24,18 @@
     &-name {
       font-size: 24px;
     }
-    &-text {
-      padding: 16px 24px 16px;
-      word-break: break-all;
+    // &-text {
+    //   padding: 16px 24px 16px;
+    //   word-break: break-all;
+    // }
+    #follow_form {
+      margin: 10px 0;
     }
   }
+}
+
+.unfollow {
+  background-color: rgb(161, 159, 159);
 }
 
 .stats {
