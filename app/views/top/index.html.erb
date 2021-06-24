@@ -2,7 +2,7 @@
   <div class="center jumbotron"> 
     <div class="searchall"> 
       <h1 class="catch-copy">出会い、そして創造へ</h1> 
-      <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "worker") %>
+      <% if !(logged_in?) || (current_user.id == 1 || current_user.profession == "worker") %>
         <div class="searchall-form">
           <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
             <%= form.text_field :keyword, placeholder: "現場を検索する",class: "search-form" %>
@@ -10,7 +10,7 @@
           <% end %>
         </div>
       <% end %>
-      <% if !(logged_in?) || (current_user.id == 6 || current_user.profession == "company") %>
+      <% if !(logged_in?) || (current_user.id == 1 || current_user.profession == "company") %>
       <div class="searchall-form">
         <%= form_with url: search_users_path, local: true, method: :get do |form| %>
           <%= form.text_field :keyword, placeholder: "職人を検索する",class: "search-form" %>
@@ -36,7 +36,7 @@
           <p class="listtitle">新規職人一覧</p>   
           <div class="new-woker">       
             <% @users.each do |user| %>
-            <% if user.profession == "worker" && user.id != 6 %>
+            <% if user.profession == "worker" && user.id != 1 %>
               <%= render user %>
             <% end %>
             <% end %>

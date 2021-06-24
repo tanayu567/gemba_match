@@ -41,14 +41,14 @@
     <div class="form-group">
       <%= f.text_area :license, class: "form-control", placeholder: "資格", rows: "4" %>
     </div>
-
-    <div class="form-group">
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
-    </div>
-
+    <% unless @user.email == "guest@example.com" %>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+      </div>
     <div class="form-group">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワードの確認" %>
     </div>
+    <% end %>
 
     <div class="user-edit__submit-btn">
       <%= f.submit "保存", class: "btn btn-block text-white" %>
