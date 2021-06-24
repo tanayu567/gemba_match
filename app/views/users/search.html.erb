@@ -3,7 +3,7 @@
       検索結果一覧
     </div>
   <% @users.each do |user| %> 
-    <% if user.id != 1 && user.profession == "worker" %>
+    <% if user.email != "guest@example.com" && user.profession == "worker" %>
       <%= render user %>
     <% end %>
   <% end %>
