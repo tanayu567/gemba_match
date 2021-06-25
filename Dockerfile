@@ -9,6 +9,7 @@ WORKDIR /gemba_match
 COPY Gemfile ./Gemfile
 COPY Gemfile.lock ./Gemfile.lock
 RUN gem install bundler
+RUN gem install rails
 RUN bundle install
 COPY . /gemba_match
 
