@@ -1,16 +1,12 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      # ruby2.5.1を使ったアプリのため
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
-#  ①注意！！ bundlerのバージョンが2.0.1以上だと、bundle installに失敗します。ここに環境として指定します。
            BUNDLER_VERSION: 2.2.2
-#  ②注意！！ circleCIは仮想環境を構築するので、そのときに使うデータベースを指定する必要があります。
            RAILS_ENV: 'test'
-      # Mysqlのバージョン5.6で動かしていたため、5.6を指定
+      
       - image: circleci/mysql:5.7
         environment:
            MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
@@ -35,7 +31,7 @@ jobs:
 
       - run:
           name: install dependencies
-          command:
+          command: |
             gem install bundler -v 2.2.2
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
@@ -44,7 +40,6 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-# ②ちょっと無理やりですが、database.ymlとdatabase.yml.ciを入れ替える記述です。
       - run: mv config/database.yml.ci config/database.yml 
 
       # Database setup
@@ -64,6 +59,7 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)" 
+
             bundle exec rspec \
               --format progress \
               --format RspecJunitFormatter \
@@ -71,9 +67,6 @@ jobs:
               --format progress \
               $TEST_FILES
 
-
-
-# ③ここでRspecJunitFormatterというgemをインストールしていないとエラーになります。gemfileに記述しましょう。
 
       # collect reports
       - store_test_results:
