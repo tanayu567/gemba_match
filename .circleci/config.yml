@@ -49,7 +49,7 @@ jobs:
 # rubocopを走らせる記述です。
       - run:
           name: Rubocop
-          command: rubocop --fail-level W --display-only-fail-level-offenses
+          command: bundle exec rubocop --fail-level W --display-only-fail-level-offenses
 
 # rspecを走らせる記述です。
       # run tests!
@@ -66,7 +66,7 @@ jobs:
               --out /tmp/test-results/rspec.xml \
               --format progress \
               $TEST_FILES
-
+              
 
       # collect reports
       - store_test_results:
