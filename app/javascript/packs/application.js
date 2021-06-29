@@ -15,6 +15,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "src/profile_image_upload"
+// import "../test"
 
 
 Rails.start()
