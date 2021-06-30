@@ -84,10 +84,10 @@ jobs:
           path: /tmp/test-results
           destination: test-results
 
-deploy:
+# Herokuへデプロイする記述です。
+  deploy:
     docker:
       - image: buildpack-deps:trusty
-    executor: heroku/default
     steps:
       - checkout
       - run:
