@@ -1,22 +1,22 @@
-/Users/tana-yu/Desktop/portfolio/gemba_match = File.expand_path('../../', __FILE__)
+app_path = File.expand_path('../../', __FILE__)
 
 #アプリケーションサーバの性能を決定する
 worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
-working_directory /Users/tana-yu/Desktop/portfolio/gemba_match
+working_directory app_path
 
 #Unicornの起動に必要なファイルの設置場所を指定
-pid "#{/Users/tana-yu/Desktop/portfolio/gemba_match}/tmp/pids/unicorn.pid"
+pid "#{app_path}/tmp/pids/unicorn.pid"
 
 #ポート番号を指定
 listen 3000
 
 #エラーのログを記録するファイルを指定
-stderr_path "#{/Users/tana-yu/Desktop/portfolio/gemba_match}/log/unicorn.stderr.log"
+stderr_path "#{app_path}/log/unicorn.stderr.log"
 
 #通常のログを記録するファイルを指定
-stdout_path "#{/Users/tana-yu/Desktop/portfolio/gemba_match}/log/unicorn.stdout.log"
+stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
