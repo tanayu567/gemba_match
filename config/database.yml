@@ -23,7 +23,7 @@ default: &default
   username: root
   password: tanayu567
   socket: /tmp/mysql.sock
-  host: db
+  # host: db
 
 # development:
 #   <<: *default
@@ -31,7 +31,7 @@ default: &default
 development:
   <<: *default
   database: gemba_match_development
-  # host: db
+  host: db
   # username: root
   # password: tanayu567
 
@@ -44,7 +44,7 @@ development:
 test:
   <<: *default
   database: gemba_match_test
-  # host: db
+  host: db
   # username: root
   # password: tanayu567
 
