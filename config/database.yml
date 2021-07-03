@@ -21,7 +21,7 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  # password: tanayu567
+  password: tanayu567
   socket: /tmp/mysql.sock
   # host: db
 
@@ -32,7 +32,7 @@ development:
   <<: *default
   database: gemba_match_development
   host: db
-  password: tanayu567
+  # password: tanayu567
   # username: root
 
 # Warning: The database defined as "test" will be erased and
@@ -45,7 +45,7 @@ test:
   <<: *default
   database: gemba_match_test
   host: db
-  password: tanayu567
+  # password: tanayu567
   # username: root
 
 # As with config/credentials.yml, you never want to store sensitive information,
