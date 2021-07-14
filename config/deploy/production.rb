@@ -1,4 +1,10 @@
-server '35.75.182.20', user: 'ec2-user', roles: %w{app db web}
+server '35.75.65.66', user: 'tanayu', roles: %w{app db web}
+
+set :ssh_options, {
+  keys: %w(~/.ssh/gemba_match.pem),
+  forward_agent: true,
+  auth_methods: %w(publickey),
+}
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

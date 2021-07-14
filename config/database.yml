@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: tanayu567
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
   # host: db
 
 # development:
@@ -32,6 +32,7 @@ development:
   <<: *default
   database: gemba_match_development
   host: db
+  socket: /tmp/mysql.sock
   # password: tanayu567
   # username: root
 
@@ -45,6 +46,7 @@ test:
   <<: *default
   database: gemba_match_test
   host: db
+  socket: /tmp/mysql.sock
   # password: tanayu567
   # username: root
 
@@ -76,8 +78,8 @@ test:
 
 production:
   <<: *default
-  database: <%= Rails.application.credentials.db[:database] %>
-  username: <%= Rails.application.credentials.db[:username] %>
+  database: gemba_match_production
+  username: root
   password: <%= Rails.application.credentials.db[:password] %>
-  socket: <%= Rails.application.credentials.db[:socket] %>
-  # host: <%= Rails.application.credentials.db[:host] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
+  # socket: <%= Rails.application.credentials.db[:socket] %>
