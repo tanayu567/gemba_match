@@ -15,7 +15,7 @@ install_plugin Capistrano::Puma::Nginx
 # set :rbenv_type, :user
 # set :rbenv_ruby, '2.6.3'
 
-# Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 
 # Load DSL and set up stages
 # require "capistrano/setup"
