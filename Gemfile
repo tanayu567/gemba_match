@@ -78,3 +78,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ransack'
 gem 'nokogiri', '~> 1.11.7'
 gem 'mini_racer'
+
+gem "fog-aws", "~> 3.10"
