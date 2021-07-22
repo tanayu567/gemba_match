@@ -91,7 +91,7 @@ jobs:
 # EC2へデプロイする記述です。
   deploy:
     docker:
-      - image: buildpack-deps:trusty
+      - image: circleci/ruby:2.6.3-node-browsers
         environment:
            BUNDLER_VERSION: 2.2.23
     steps:
