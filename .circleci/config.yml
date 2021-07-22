@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.1.0
-  
+
 jobs:
   build:
     docker:
@@ -92,6 +92,8 @@ jobs:
   deploy:
     docker:
       - image: buildpack-deps:trusty
+        environment:
+           BUNDLER_VERSION: 2.2.2
     steps:
       - checkout
       - ruby/install-deps
