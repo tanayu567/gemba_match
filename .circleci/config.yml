@@ -93,7 +93,7 @@ jobs:
     docker:
       - image: buildpack-deps:trusty
         environment:
-           BUNDLER_VERSION: 2.2.2
+           BUNDLER_VERSION: 2.2.23
     steps:
       - checkout
       - ruby/install-deps
