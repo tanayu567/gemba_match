@@ -90,10 +90,12 @@ jobs:
       - image: buildpack-deps:trusty
     steps:
       - checkout
-      - run:
-          name: Heroku への master のデプロイ
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      - add_ssh_keys:
+          fingerprints: "c2:db:84:03:3e:30:94:ee:b0:8d:e6:91:58:a6:4d:71"
+      # - run:
+      #     name: Heroku への master のデプロイ
+      #     command: |
+      #       git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
 workflows:
   version: 2
