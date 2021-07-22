@@ -92,6 +92,9 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: "c2:db:84:03:3e:30:94:ee:b0:8d:e6:91:58:a6:4d:71"
+      - deploy:
+          name: Capistrano deploy
+          command: bundle exec cap production deploy
       # - run:
       #     name: Heroku への master のデプロイ
       #     command: |
