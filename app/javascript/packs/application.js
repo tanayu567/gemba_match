@@ -2,11 +2,11 @@ import '../stylesheets/application';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all';
 
-import 'babel-polyfill'
-import Vue from 'vue'
-import Vuex from 'vuex'
-import App from '../app.vue'
-import store from './store.js'
+// import Vue from 'vue'
+// import Vuex from 'vuex'
+// import App from '../app.vue'
+// import store from './store.js'
+// import router from './router.js'
 
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -27,14 +27,15 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    el: '#app',
-    store: store,
-    render: (h) => h(App)
-  })
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   new Vue({
+//     el: '#app',
+//     store,
+//     router,
+//     render: (h) => h(App)
+//   })
+// })

@@ -5,11 +5,23 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
+import 'babel-polyfill'
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from '../app.vue'
+import store from './store.js'
+import router from './router.js'
+
+
+Vue.use.apply(Vuex)
+
+Vue.config.productionTip = false
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
+    el: '#app',
+    store,
+    router,
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)
