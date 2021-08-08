@@ -1,16 +1,20 @@
+<%= javascript_pack_tag 'like' %>
+
 <div class="like" id="like">
   <% if logged_in? %>
     <like-button :user-id="<%= current_user.id %>" :spot-id="<%= spot.id %>"></like-button>
-      <% if current_user.already_liked?(spot) %>
-        <%= button_to spot_like_path(spot), method: :delete, remote: true, class: "heart" do %>
-          <i class="fas fa-heart" style="color: #FD3378;"></i>
-        <% end %>
-        <span style="color: #FD3378;"><%= "#{spot.likes.count} いいね" %> </span>
-      <% else %>
-        <%= button_to spot_likes_path(spot), method: :post, remote: true, class: "heart" do %>
-          <i class="far fa-heart" style="color: gray;"></i>
-        <% end %>
-        <span style="color: gray;"><%= "#{spot.likes.count} いいね" %> </span>
-      <% end %>
+    <%# <% if current_user.already_liked?(spot) %> 
+        <%# <%= button_to spot_like_path(spot), method: :delete, remote: true, class: "heart" do %> 
+          <%#<i class="fas fa-heart" style="color: #FD3378;"></i>
+        <% end %> 
+        <%# <span style="color: #FD3378;"><%= "#{spot.likes.count} いいね" %>
+        <%#</span>
+      <% else %> 
+        <%#<%= button_to spot_likes_path(spot), method: :post, remote: true, class: "heart" do %> 
+          <%#<i class="far fa-heart" style="color: gray;"></i>
+        <% end %> 
+        <%#<span style="color: gray;"><%= "#{spot.likes.count} いいね" %>
+        <%#</span>
+      <% end %>    
   <% end %>   
 </div>
