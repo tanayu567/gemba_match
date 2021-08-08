@@ -7,8 +7,15 @@
     <% end %>
     <div class="profile-list-name">
       <ul>
-        <li><%= link_to "#{user.name}", user, class: "worker-name" %></li>
+        <li>
+          <%= link_to "#{user.name}", user, class: "worker-name" %>
+          <% if logged_in? && current_user.admin? && !current_user?(user) %>
+            <%= link_to "　　削除する", user, method: :delete,
+                                  data: { confirm: "本当に削除しますか？" } %>
+          <% end %>
+        </li>
         <li>経験年数 <%= user.experience %>年</li>
+        
       </ul>
     </div>
   </div>
