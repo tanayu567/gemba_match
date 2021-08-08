@@ -30,14 +30,27 @@ export default {
       return Boolean(this.findLikeId())
     }  
   },
+  created: function() {
+    this.fetchLikeBySpotId().then(result => {
+      this.likeList = result
+    })
+  },
   methods: {
+    fetchLikeBySpotId: async function() {
+      const res = await axios.get(`/api/likes/?spot_id=${this.spotId}`)
+      if (res.status !== 200) { process.exit() }
+      return res.data
+    },
     registerLike: async function() {
-      const res = await axios.post(`/api/spots/${this.spotId}/likes`)
+      const res = await axios.post(`/api/spots/${this.spotId}/likes`, { like_id: this.likeId })
       if (res.status !== 201) { process.exit() }
+      this.fetchLikeBySpotId().then(result => {
+        this.likeList = result
+      })
     },
     deleteLike: async function() {
       const likeId = this.findLikeId()
-      const res = await axios.delete(`/api/spots/:spot_id/likes/${likeId}`)
+      const res = await axios.delete(`/api/spots/${this.spotId}/likes/${likeId}`)
       if (res.status !== 200) { process.exit() }
       this.likeList = this.likeList.filter(n => n.id !== likeId)
     },

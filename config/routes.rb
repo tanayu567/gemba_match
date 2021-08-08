@@ -28,24 +28,18 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
-
     
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
   resources :relationships, only: [:create, :destroy]
 
-  namespace :api, { format: 'json' } do
-    resources :spots do
-      resources :likes, only: %i[create destroy]
-    end
+  resources :spots do
+    resources :likes, only: %i[create destroy]
   end
   
-
   resources :spots do
     resources :comments, only: [:create, :destroy]
   end
-
   
   
 end

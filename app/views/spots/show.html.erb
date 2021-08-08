@@ -26,13 +26,6 @@
 
     <%= render 'likes/like', spot: @spot %>
 
-  <% if logged_in? %> 
-      <%= form_with model: [@spot,@comment], local: true , class: "comment-form" do |f| %>
-        <%= f.text_area :text, rows: "2", class: "form-control"%>  
-        <%= f.submit "コメントする", class: "form-button" %> 
-      <% end %>
-  <% end %>
-
   <div class="comment-index">
     <span class="box-title">コメント</span>
     <% @comments.each do |comment| %>
@@ -45,4 +38,11 @@
       </p>
     <% end %>
   </div>
+  
+  <% if logged_in? %> 
+      <%= form_with model: [@spot,@comment], local: true , class: "comment-form" do |f| %>
+        <%= f.text_area :text, rows: "2", class: "form-control"%>  
+        <%= f.submit "コメントする", class: "form-button" %> 
+      <% end %>
+  <% end %>
 </div>
