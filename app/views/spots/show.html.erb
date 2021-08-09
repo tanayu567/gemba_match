@@ -29,11 +29,13 @@
   <% end %>
 
   <div class="comment-index">
-    <span class="box-title">コメント</span>
+    <% if @comments.any? %>
+      <span class="box-title">コメント</span>
+    <% end %>
     <% @comments.each do |comment| %>
       <p class="comment-contents">
-        <strong><%= link_to "#{comment.user.name}", user_path(id: comment.user.id), class: "comment-user" %>：</strong>
-        <%= comment.text %>
+        <strong><%= link_to "#{comment.user.name}", user_path(id: comment.user.id), class: "comment-user" %></strong><br>
+        <%= safe_join(comment.text.split("\n"),tag(:br)) %>
         <% if logged_in? && current_user.id == comment.user_id %>
           <%= button_to "コメント削除", spot_comment_path(comment.spot.id, comment.id), class: "comment-delete", method: :delete %>
         <% end %>
