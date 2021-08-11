@@ -9,16 +9,19 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
+
   resources :spots do
     collection do
       get 'search'
     end
   end
+
   resources :users do
     collection do
       get 'search'
     end
   end
+
   resources :users do
     member do
       get :following, :followers
@@ -30,7 +33,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
   resources :relationships, only: [:create, :destroy]
-
+  resources :matching, only: [:index]
+  resources :chat_rooms, only: [:create, :show]
   
     resources :spots do
       resources :likes, only: %i[create destroy]
