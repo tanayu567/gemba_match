@@ -21,15 +21,3 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// Vue.use(Vuex)
-
-// Vue.config.productionTip = false
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   new Vue({
-//     el: '#app',
-//     store,
-//     router,
-//     render: (h) => h(App)
-//   })
-// })
