@@ -1,2 +1,2 @@
-module ChatRoomsHelper
-end
+# module ChatRoomsHelper
+# end
