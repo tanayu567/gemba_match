@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :spots, only: [:show, :create, :destroy, :edit, :new]
   resources :relationships, only: [:create, :destroy]
   resources :matching, only: [:index]
+  resources :chat_rooms, only: [:create, :show]
   
     resources :spots do
       resources :likes, only: %i[create destroy]
