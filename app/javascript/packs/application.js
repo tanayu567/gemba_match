@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-free/js/all';
 //= require bootstrap-sprockets
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
+// import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "src/profile_image_upload"
