@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top header-top">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top header-top">
   <div class="container-fluid">
     <%= link_to "現場マッチ", root_path, class: "header-chara navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +16,9 @@
           </li>
           <li class="nav-item">           
             <%= link_to "ログイン", user_session_path, class: "header-chara nav-link" %>
+          </li>
+          <li class="nav-item">           
+            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "header-chara nav-link", method: :post %>
           </li>
         <% end %>
           <%# <li class="nav-item dropdown"> %>

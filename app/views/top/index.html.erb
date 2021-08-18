@@ -4,17 +4,17 @@
       <h1 class="catch-copy">出会い、そして創造へ</h1> 
       <% if !(logged_in?) || (current_user.email == "guest@example.com" || current_user.profession == "worker") %>
         <div class="searchall-form">
-          <%= form_with url: search_spots_path, local: true, method: :get do |form| %>
-            <%= form.text_field :keyword, placeholder: "現場を検索する",class: "search-form" %>
-            <%= form.submit "検索", class: "search-btn btn text-white" %>
+          <%= form_with url: search_spots_path, local: true, class: "search-pair", method: :get do |form| %>
+            <%= form.text_field :keyword, placeholder: "現場を検索する(現場名,地名etc)",class: "search-form" %>
+            <%= form.submit "検索", class: "search-btn" %>
           <% end %>
         </div>
       <% end %>
       <% if !(logged_in?) || (current_user.email == "guest@example.com" || current_user.profession == "company") %>
       <div class="searchall-form">
-        <%= form_with url: search_users_path, local: true, method: :get do |form| %>
-          <%= form.text_field :keyword, placeholder: "職人を検索する",class: "search-form" %>
-          <%= form.submit "検索", class: "search-btn btn text-white" %>
+        <%= form_with url: search_users_path, local: true, class: "search-pair", method: :get do |form| %>
+          <%= form.text_field :keyword, placeholder: "職人を検索する(職人名,活動エリアetc)",class: "search-form" %>
+          <%= form.submit "検索", class: "search-btn" %>
         <% end %>
       </div>
       <% end %>
@@ -24,7 +24,7 @@
   <div class="container px-3">
     <div class="row mx-n5">
       <div class="col px-4">
-        <div class="p-3 border bg-light spots-area">
+        <div class="bg-light spots-area">
           <p class="listtitle">新着現場一覧</p>
           <div class="new-spots">
             <%= render @spots %>
@@ -32,7 +32,7 @@
         </div>  
       </div>
       <div class="col px-4">
-        <div class="p-3 border bg-light wokers-area">
+        <div class="bg-light wokers-area">
           <p class="listtitle">新規職人一覧</p>   
           <div class="new-woker">       
             <% @users.each do |user| %>

@@ -1,6 +1,6 @@
-body {
-  font-family: "ヒラギノ丸ゴ ProN";
-}
+// body {
+//   // font-family: "ヒラギノ丸ゴ ProN";
+// }
 
 .jumbotron {
   text-align: center;
@@ -14,20 +14,36 @@ body {
     text-shadow: 0 0 15px white;
   }
   .searchall-form {
+    font-family: "游明朝", "游明朝体", serif;
+    font-weight: 60;
     margin: 20px 0;
     .search-form {
       margin: 0 2px;
       height: 30px;
+      width: 300px;
       border: none;
       box-shadow: 0 0 8px gray;
     }
     .search-btn {
       padding: 2px 12px;
+      // border: 0px none;
       height: 30px;
-      background-color: #3988fd;
-      border-radius: 10px;
-      margin: 0 2px;
+      // background-color: #3988fd;
+      // border-radius: 10px;
+      // margin: 0 2px;
       box-shadow: 0 0 8px gray;
+      border: 1px solid #ccc;
+      background: #f1e767;
+      background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+      background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+      background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+      -webkit-box-shadow: inset 1px 1px 1px #fff;
+      box-shadow: inset 1px 1px 1px #fff;
+    }
+    .search-btn:hover {
+      background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+      background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+      background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
     }
   }
   .serch {
@@ -39,12 +55,13 @@ body {
 }
 
 .spots-area {
-  border-radius: 10px;
+  padding: 16px 0 10px 0;
+  margin-bottom: 15px;
   box-shadow: 0 0 4px gray;
 }
 
 .wokers-area {
-  border-radius: 10px;
+  padding: 16px 0 10px 0;
   box-shadow: 0 0 4px gray;
 }
 
