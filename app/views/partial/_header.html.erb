@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top header-top">
   <div class="container-fluid">
-    <%= link_to "現場マッチ", root_path, class: "header-chara navbar-brand" %>
+    <%= link_to root_path do %>
+      <%= image_tag 'title-logo3.png', class: "title-logo" %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> 
@@ -18,7 +20,7 @@
             <%= link_to "ログイン", user_session_path, class: "header-chara nav-link" %>
           </li>
           <li class="nav-item">           
-            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "header-chara nav-link", method: :post %>
+            <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, class: "header-chara nav-link", method: :post %>
           </li>
         <% end %>
           <%# <li class="nav-item dropdown"> %>
