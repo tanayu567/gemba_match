@@ -43,7 +43,7 @@
         <span>ログアウト</span>
       </div>
 
-      <% if @user.profession == "company" %>
+      <% if @user.profession == "company" || @user.email == "guest@example.com" %>
         <div class="user-action-common"> 
           <%= link_to new_spot_path do %>
             <i class="fas fa-city fa-2x"></i>
@@ -61,7 +61,7 @@
     </div>
   <% end %>
 
-  <% if @user.profession == "company" %>
+  <% if @user.profession == "company" || @user.email == "guest@example.com" %>
     <p class="spot-index">投稿現場一覧</p>
     <div class="spotslist">
       <%= render @spots %>

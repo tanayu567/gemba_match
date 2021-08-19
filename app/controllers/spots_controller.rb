@@ -10,7 +10,6 @@ class SpotsController < ApplicationController
   def create
     @spot = current_user.spots.build(spot_params)
     if @spot.save
-      flash[:success] = "工事現場を投稿しました"
       redirect_to root_url
     else
       render 'top/index'
