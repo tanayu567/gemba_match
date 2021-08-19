@@ -80,3 +80,4 @@ gem 'nokogiri', '~> 1.11.7'
 gem 'mini_racer'
 
 gem "fog-aws", "~> 3.10"
+gem 'rails-i18n'
