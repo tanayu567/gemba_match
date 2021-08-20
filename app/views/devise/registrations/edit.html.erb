@@ -13,11 +13,11 @@
       <%= image_tag @user.profile_image.url, class: "profile-img", id: "profile-img" %>
     <% end %>
 
-    <% unless @user.email == "guest@example.com" %>
+    <%# <% unless @user.email == "guest@example.com" %> %>
       <label class="profile-img-upload">
         <%= f.file_field :profile_image, id: "profile_image_upload" %>ファイルを選択
       </label> 
-    <% end %>
+    <%# <% end %> %>
   </div>
 
   <% unless @user.email == "guest@example.com" %>
