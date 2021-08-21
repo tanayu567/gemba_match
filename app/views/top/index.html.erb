@@ -37,8 +37,8 @@
         <div class="bg-light wokers-area">
           <p class="listtitle">新規職人一覧</p>   
           <div class="new-woker">       
-            <% @users.first(11).each do |user| %>
-            <% if user.profession == "worker" && user.email != "guest@example.com" %>
+            <% @users.first(10).each do |user| %>
+            <% if user.profession == "worker"%>
               <%= render user %>
             <% end %>
             <% end %>
