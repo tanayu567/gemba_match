@@ -27,7 +27,7 @@
         <div class="bg-light spots-area">
           <p class="listtitle">新着現場一覧</p>
           <div class="new-spots">
-          <% @spots.first(10).each do |spot| %>
+          <% @spots.first(8).each do |spot| %>
             <%= render spot %>
           <% end %>
           </div>
@@ -37,7 +37,7 @@
         <div class="bg-light wokers-area">
           <p class="listtitle">新規職人一覧</p>   
           <div class="new-woker">       
-            <% @users.first(10).each do |user| %>
+            <% @users.first(8).each do |user| %>
             <% if user.profession == "worker"%>
               <%= render user %>
             <% end %>
