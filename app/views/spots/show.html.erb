@@ -16,6 +16,9 @@
       <div class="detail-company mt-4">
         建設会社：　 <%= link_to @spot.user.name, user_path(id: @spot.user.id), class: "detail-company" %>
       </div>
+      <% if logged_in? && current_user.id == @spot.user_id %>
+        <%= link_to "現場情報を編集", edit_spot_path(@spot), class: "spot-edit" %>
+      <% end %>
     </div>
   </div>
 

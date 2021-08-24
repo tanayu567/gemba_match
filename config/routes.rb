@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:show]
-  resources :spots, only: [:show, :create, :destroy, :edit, :new]
+  resources :spots, only: [:show, :create, :destroy, :edit, :update, :new]
   resources :relationships, only: [:create, :destroy]
   resources :matching, only: [:index]
   resources :chat_rooms, only: [:create, :show]

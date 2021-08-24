@@ -21,7 +21,23 @@
 
 .detail-company {
   text-decoration: none;
+  margin-bottom: 20px;
 }
+
+.spot-edit {
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  background-color: hsl(216, 98%, 52%);
+  border-radius: 8px;
+}
+
+.spot-edit:hover {
+  color: white;
+  text-decoration: none;
+  background-color: hsl(216, 98%, 52%);
+}
+
 .like {
   height: 30px;
   margin: 0 0 15px 15px;
