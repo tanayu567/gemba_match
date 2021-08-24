@@ -22,7 +22,9 @@
     </div>
   </div>
 
+  <div id="likes_buttons_<%= @spot.id %>">
     <%= render 'likes/like', spot: @spot %>
+  </div>
 
   <% if logged_in? %> 
       <%= form_with model: [@spot,@comment], local: true , class: "comment-form" do |f| %>
