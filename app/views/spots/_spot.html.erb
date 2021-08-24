@@ -3,5 +3,8 @@
   <li><i class="fas fa-solid fa-map"></i>　<%= spot.address %></li>
   <li><i class="fas fa-solid fa-calendar"></i>　<span><%= spot.start %></span> ~ <span><%= spot.last %></span></li>
   <li><i class="fas fa-solid fa-dollar-sign"></i></i>　¥ <%= spot.money %></li>
+  <% if logged_in? && current_user.id == spot.user_id %>
+    <%= button_to "現場削除", spot, class: "spot-delete", method: :delete %>
+  <% end %>
 </ul>
 

@@ -17,6 +17,8 @@ class SpotsController < ApplicationController
   end
 
   def destroy
+    Spot.find(params[:id]).destroy
+    redirect_back(fallback_location: root_path)
   end
 
   def edit
