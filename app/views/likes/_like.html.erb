@@ -1,7 +1,7 @@
 <div class="like" id="like">
   <% if logged_in? %>
     <% if current_user.already_liked?(spot) %> 
-        <%= button_to spot_like_path(spot), method: :delete, class: "heart", remote: true do %> 
+        <%= button_to spot_likes_path(spot), method: :delete, class: "heart", remote: true do %> 
           <i class="fas fa-heart" style="color: #FD3378;"></i>
         <% end %> 
         <span style="color: #FD3378;"><%= "#{spot.likes.count} いいね" %></span>

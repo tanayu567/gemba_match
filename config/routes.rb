@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: [:create, :show]
   
     resources :spots do
-      resources :likes, only: %i[create destroy]
+      resource :likes, only: %i[create destroy]
     end
 
 
